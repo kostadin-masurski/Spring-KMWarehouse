@@ -31,6 +31,7 @@ public class Material extends BaseEntity {
     @Column
     private BigDecimal weightKg;
 
-    @Column(nullable = false)
+    @ManyToOne(targetEntity = Partner.class)
+    @JoinColumn(name = "vendor_id", referencedColumnName = "id")
     private Partner vendor;
 }
