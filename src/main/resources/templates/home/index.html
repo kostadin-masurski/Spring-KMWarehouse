@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Another example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="carousel-caption text-right">
+                        <h1>One more for good measure.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="div-contact">
+            <form class="contacts" id="form-company" method="post" action="#">
+                <label class="contacts">
+                    <h2 class="text-light">Company contact form:</h2>
+                    <input class="form-control" type="text" name="name" placeholder="Name">
+                    <input class="form-control" type="text" name="eMail" placeholder="e-mail">
+                    <input class="form-control" type="text" name="address" placeholder="Address">
+                    <input class="btn btn-lg btn-light" type="button" value="Send">
+                </label>
+            </form>
+            <form class="contacts" id="form-employee" method="post" action="#">
+                <label class="contacts">
+                    <h2 class="text-light">Employee contact form:</h2>
+                    <input class="form-control" type="text" name="firstName" placeholder="First Name">
+                    <input class="form-control" type="text" name="lastName" placeholder="Last Name">
+                    <input class="form-control" type="text" name="eMail" placeholder="e-mail">
+                    <input class="form-control" type="text" name="company" placeholder="Company">
+                    <input class="form-control" type="text" name="job" placeholder="Job title">
+                    <input class="btn btn-lg btn-light" type="button" value="Send">
+                </label>
+            </form>
+        <button class="btn-primary">Employee contact form</button>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+</html>

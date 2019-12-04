@@ -1,0 +1,84 @@
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+body {
+    background-image: url('../img/sklad-bg.jpg');
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+/*body :after {
+    content: '';
+    background-color: rgba(0, 123, 255, .05);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}*/
+
+.row {
+    margin: 0;
+}
+
+.form-control {
+    margin: 1%;
+    display: inline;
+}
+
+.carousel {
+    width: 80%;
+    margin-left: 10%;
+    min-height: 49vh;
+}
+
+.carousel-item {
+    height: 400px;
+    margin-top: 1%;
+    background-color: rgba(0, 123, 255, .5);
+    border-radius: 25px;
+}
+
+.div-contact {
+    /*display: flex;*/
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    background-color: rgba(0, 2, 40, .8);
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.contacts {
+    width: 100%;
+}
+
+footer {
+    background-color: rgba(0,0,0, .9);
+    height: 3%;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.footer-a {
+    color: ghostwhite;
+}
+
+.bg {
+    background-color: red;
+    border: yellow solid 1px;
+}
