@@ -25,11 +25,12 @@ public class Material extends BaseEntity {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;*/
 
-    @Column
+    @Column(columnDefinition = "Decimal(10,2) default '0.00'")
     private BigDecimal price;
 
-    @Column
-    private BigDecimal weightKg;
+    @Column(columnDefinition = "varchar(32) default 'NOT_SET'")
+    @Enumerated(EnumType.STRING)
+    private UnitOfMeasure unitOfMeasure;
 
     @ManyToOne(targetEntity = Partner.class)
     @JoinColumn(name = "vendor_id", referencedColumnName = "id")
