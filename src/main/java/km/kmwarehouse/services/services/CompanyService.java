@@ -5,6 +5,6 @@ import km.kmwarehouse.services.models.CompanyServiceModel;
 import km.kmwarehouse.web.view.models.CompanyModel;
 
 public interface CompanyService {
-    void create(CompanyModel companyModel);
+    void register(CompanyModel companyModel);
     void edit(CompanyModel companyModel);
 }
