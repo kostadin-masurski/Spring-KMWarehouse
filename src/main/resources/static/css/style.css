@@ -66,15 +66,15 @@ body {
     justify-content: center;
 }
 
-.div-home {
-    background-color: rgba(0, 2, 10, .4);
-    margin: 1%;
-    padding: .5%;
+.contacts {
+    width: 100%;
 }
 
-.icon-container {
-    margin-left: 8%;
-    margin-right: 8%;
+.div-home {
+    /*background-color: rgba(0, 2, 10, .4);*/
+    background-color: rgba(0, 123, 255, .5);
+    margin: 1%;
+    padding: .5%;
 }
 
 img {
@@ -86,8 +86,10 @@ img {
     margin: auto auto;
 }
 
-.contacts {
-    width: 100%;
+.div-bg-table {
+    background-color: rgba(0, 123, 255, .85);
+    margin: 1%;
+    padding: .5%;
 }
 
 footer {

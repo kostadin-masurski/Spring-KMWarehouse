@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="div-bg-table">
+        <table id="myTable" class="display table-hover table-bordered">
+            <thead class="thead-light">
+            <tr>
+                <th>Company</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Register Number</th>
+                <th>VAT Number</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="company: ${companies}">
+                <td th:text="${company.getCompanyId()}"/>
+                <td th:text="${company.getName()}"/>
+                <td th:text="${company.getAddress()}"/>
+                <td th:text="${company.getRegisterNumber()}"/>
+                <td th:text="${company.getVatNumber()}"/>
+                <td>
+                    <a href="/company/register">
+                        <button type="button" class="btn-primary">Edit</button>
+                        <button type="button" class="btn-secondary">Details</button>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+<script src="/js/table.js"></script>
+</html>

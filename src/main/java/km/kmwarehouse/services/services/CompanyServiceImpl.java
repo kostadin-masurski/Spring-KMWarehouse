@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @AllArgsConstructor
 @Service
 public class CompanyServiceImpl implements CompanyService {
@@ -28,5 +31,10 @@ public class CompanyServiceImpl implements CompanyService {
         company.setRegisterNumber(companyModel.getRegisterNumber());
         company.setVatNumber(companyModel.getVatNumber());
         companyRepository.save(mapper.map(companyModel, Company.class));
+    }
+
+    @Override
+    public List<CompanyModel> findAll() {
+        return companyRepository.findAll().stream().map(c -> mapper.map(c, CompanyModel.class)).collect(Collectors.toList());
     }
 }
