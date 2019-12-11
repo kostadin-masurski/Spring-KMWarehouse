@@ -79,8 +79,8 @@ body {
 
 img {
     display: block;
-    width:300px;
-    height:300px;
+    width:270px;
+    height:270px;
     max-height: 100%;
     max-width: 100%;
     margin: auto auto;
@@ -88,6 +88,9 @@ img {
 
 .div-bg-table {
     background-color: rgba(0, 123, 255, .85);
+    background-image: url("../img/company-logo1.jpg");
+    background-repeat: repeat-y;
+    background-position: center top;
     margin: 1%;
     padding: .5%;
 }

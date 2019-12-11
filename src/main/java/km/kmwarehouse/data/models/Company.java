@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @Table(name = "companies")
 public class Company extends LegalEntity {
 
-    @Column(nullable = false, unique = true)
-    private String companyId;
+    @Column(name = "company_code", nullable = false, unique = true)
+    private String companyCode;
 
     @Column(nullable = false, unique = true)
     private String email;

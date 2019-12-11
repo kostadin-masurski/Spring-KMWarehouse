@@ -5,30 +5,26 @@
 <th:block th:include="~{_shared/header}"/>
 <main>
     <div class="div-bg-table">
+        <a href="/company/register">
+            <h2 class="text-center text-dark">REGISTER NEW COMPANY</h2>
+        </a>
+        <h2 class="text-center">ALL COMPANIES</h2>
         <table id="myTable" class="display table-hover table-bordered">
             <thead class="thead-light">
             <tr>
                 <th>Company</th>
                 <th>Name</th>
                 <th>Address</th>
-                <th>Register Number</th>
-                <th>VAT Number</th>
-                <th>Edit</th>
+                <th>Active status</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="company: ${companies}">
-                <td th:text="${company.getCompanyId()}"/>
+                <td th:text="${company.getCompanyCode()}"/>
                 <td th:text="${company.getName()}"/>
                 <td th:text="${company.getAddress()}"/>
-                <td th:text="${company.getRegisterNumber()}"/>
-                <td th:text="${company.getVatNumber()}"/>
-                <td>
-                    <a href="/company/register">
-                        <button type="button" class="btn-primary">Edit</button>
-                        <button type="button" class="btn-secondary">Details</button>
-                    </a>
-                </td>
+                <td th:if="${company.isActive()}" th:text="Active" class="text-success"/>
+                <td th:unless="${company.isActive()}" th:text="Deactivated" class="text-danger"/>
             </tr>
             </tbody>
         </table>

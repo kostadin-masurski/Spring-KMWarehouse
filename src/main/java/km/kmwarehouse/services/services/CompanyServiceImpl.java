@@ -18,23 +18,43 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public void register(CompanyModel companyModel) {
-        companyRepository.save(mapper.map(companyModel, Company.class));
+        Company company = mapper.map(companyModel, Company.class);
+        company.setActive(true);
+        companyRepository.save(company);
     }
 
     @Override
     public void edit(CompanyModel companyModel) {
-        Company company = companyRepository.findFirstByCompanyId(companyModel.getCompanyId());
-        company.setCompanyId(companyModel.getCompanyId());
+        Company company = companyRepository.findFirstByCompanyCode(companyModel.getCompanyCode());
+        company.setCompanyCode(companyModel.getCompanyCode());
         company.setName(companyModel.getName());
         company.setAddress(companyModel.getAddress());
         company.setEmail(companyModel.getEmail());
         company.setRegisterNumber(companyModel.getRegisterNumber());
         company.setVatNumber(companyModel.getVatNumber());
-        companyRepository.save(mapper.map(companyModel, Company.class));
+        company.setActive(companyModel.isActive());
+        companyRepository.save(company);
+    }
+
+    @Override
+    public CompanyModel findByCompanyId(String companyCode) {
+        return mapper.map(companyRepository.findFirstByCompanyCode(companyCode), CompanyModel.class);
     }
 
     @Override
     public List<CompanyModel> findAll() {
         return companyRepository.findAll().stream().map(c -> mapper.map(c, CompanyModel.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void activate(String entityId) {
+        Company company = companyRepository.findFirstByCompanyCode(entityId);
+        company.setActive(true);
+    }
+
+    @Override
+    public void deactivate(String entityId) {
+        Company company = companyRepository.findFirstByCompanyCode(entityId);
+        company.setActive(false);
     }
 }
