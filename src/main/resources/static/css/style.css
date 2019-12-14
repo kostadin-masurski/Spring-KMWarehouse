@@ -88,11 +88,19 @@ img {
 
 .div-bg-table {
     background-color: rgba(0, 123, 255, .85);
-    background-image: url("../img/company-logo1.jpg");
+    /*background-image: url("../img/company.jpg");*/
     background-repeat: repeat-y;
     background-position: center top;
     margin: 1%;
     padding: .5%;
+}
+
+.company-bg {
+    background-image: url("../img/company.jpg");
+}
+
+.partner-bg {
+    background-image: url("../img/partner.jpg");
 }
 
 footer {

@@ -12,9 +12,10 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 public class MaterialServiceModel {
-    private String materialId;
+    private String material;
     private String description;
     private BigDecimal price;
     private UnitOfMeasure unitOfMeasure;
     private Partner vendor;
+    private boolean active;
 }

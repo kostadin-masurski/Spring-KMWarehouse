@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Partner extends LegalEntity {
 
     @Column(nullable = false, unique = true)
-    private String partnerId;
+    private String partner;
 
     @Column(nullable = false, unique = true)
     private String email;

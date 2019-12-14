@@ -2,7 +2,7 @@ package km.kmwarehouse.services.services;
 
 import km.kmwarehouse.data.models.Company;
 import km.kmwarehouse.data.repositories.CompanyRepository;
-import km.kmwarehouse.web.view.models.CompanyModel;
+import km.kmwarehouse.services.models.CompanyServiceModel;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -15,16 +15,23 @@ import java.util.stream.Collectors;
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyRepository companyRepository;
     private final ModelMapper mapper;
+    private final ValidationService validator;
 
     @Override
-    public void register(CompanyModel companyModel) {
+    public void register(CompanyServiceModel companyModel) {
+        if (!validator.isValid(companyModel)){
+            throw new IllegalArgumentException("Input is too short or contains invalid symbol or email");
+        }
         Company company = mapper.map(companyModel, Company.class);
         company.setActive(true);
         companyRepository.save(company);
     }
 
     @Override
-    public void edit(CompanyModel companyModel) {
+    public void edit(CompanyServiceModel companyModel) {
+        if (!validator.isValid(companyModel)){
+            throw new IllegalArgumentException("Input is too short or contains invalid symbol or email");
+        }
         Company company = companyRepository.findFirstByCompanyCode(companyModel.getCompanyCode());
         company.setCompanyCode(companyModel.getCompanyCode());
         company.setName(companyModel.getName());
@@ -37,24 +44,12 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public CompanyModel findByCompanyId(String companyCode) {
-        return mapper.map(companyRepository.findFirstByCompanyCode(companyCode), CompanyModel.class);
+    public CompanyServiceModel findByCompanyCode(String companyCode) {
+        return mapper.map(companyRepository.findFirstByCompanyCode(companyCode), CompanyServiceModel.class);
     }
 
     @Override
-    public List<CompanyModel> findAll() {
-        return companyRepository.findAll().stream().map(c -> mapper.map(c, CompanyModel.class)).collect(Collectors.toList());
-    }
-
-    @Override
-    public void activate(String entityId) {
-        Company company = companyRepository.findFirstByCompanyCode(entityId);
-        company.setActive(true);
-    }
-
-    @Override
-    public void deactivate(String entityId) {
-        Company company = companyRepository.findFirstByCompanyCode(entityId);
-        company.setActive(false);
+    public List<CompanyServiceModel> findAll() {
+        return companyRepository.findAll().stream().map(c -> mapper.map(c, CompanyServiceModel.class)).collect(Collectors.toList());
     }
 }

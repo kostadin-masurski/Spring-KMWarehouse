@@ -4,27 +4,27 @@
 <body>
 <th:block th:include="~{_shared/header}"/>
 <main>
-    <div class="div-bg-table company-bg">
-        <a href="/company/register">
-            <h2 class="text-center text-dark">REGISTER NEW COMPANY</h2>
+    <div class="div-bg-table partner-bg">
+        <a href="/partner/register">
+            <h2 class="text-center text-dark">REGISTER NEW PARTNER</h2>
         </a>
-        <h2 class="text-center">ALL COMPANIES</h2>
+        <h2 class="text-center">ALL PARTNERS</h2>
         <table id="myTable" class="display table-hover table-bordered">
             <thead class="thead-light">
             <tr>
-                <th>Company</th>
+                <th>Partner</th>
                 <th>Name</th>
                 <th>Address</th>
                 <th>Active status</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="company: ${companies}">
-                <td th:text="${company.getCompanyCode()}"/>
-                <td th:text="${company.getName()}"/>
-                <td th:text="${company.getAddress()}"/>
-                <td th:if="${company.isActive()}" th:text="Active" class="text-success"/>
-                <td th:unless="${company.isActive()}" th:text="Deactivated" class="text-danger"/>
+            <tr th:each="partner: ${partners}">
+                <td th:text="${partner.getPartner()}"/>
+                <td th:text="${partner.getName()}"/>
+                <td th:text="${partner.getAddress()}"/>
+                <td th:if="${partner.isActive()}" th:text="Active" class="text-success"/>
+                <td th:unless="${partner.isActive()}" th:text="Deactivated" class="text-danger"/>
             </tr>
             </tbody>
         </table>

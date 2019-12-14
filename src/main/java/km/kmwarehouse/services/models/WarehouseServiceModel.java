@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class WarehouseServiceModel {
-    private String whId;
+    private String warehouse;
     private String name;
+    private boolean active;
 }

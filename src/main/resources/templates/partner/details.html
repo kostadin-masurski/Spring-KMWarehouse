@@ -5,25 +5,25 @@
 <th:block th:include="~{_shared/header}"/>
 <main>
     <div class="div-contact">
-            <form class="contacts" id="form-company" method="post" th:action="@{/company/__${company.getCompanyCode()}__}">
+            <form class="contacts" id="form-partner" method="post" th:action="@{/partner/__${partner.getPartner()}__}">
                 <label class="contacts">
-                    <h2 class="text-light">Company Details</h2>
+                    <h2 class="text-light">Partner Details</h2>
                     <th:block th:if="${error}">
                         <div class="alert-danger" th:text="${error}"/>
                     </th:block>
-                    <h5 class="text-light">Company</h5>
-                    <input class="form-control" type="text" disabled th:value="${company.getCompanyCode()}" name="companyCode" placeholder="Company">
+                    <h5 class="text-light">Partner</h5>
+                    <input class="form-control" type="text" disabled th:value="${partner.getPartner()}" name="partner" placeholder="Partner">
                     <h5 class="text-light">Name</h5>
-                    <input class="form-control" type="text" th:value="${company.getName()}" name="name" placeholder="Name">
+                    <input class="form-control" type="text" th:value="${partner.getName()}" name="name" placeholder="Name">
                     <h5 class="text-light">e-mail</h5>
-                    <input class="form-control" type="text" id="email" th:value="${company.getEmail()}" name="email" placeholder="e-mail">
+                    <input class="form-control" type="text" id="email" th:value="${partner.getEmail()}" name="email" placeholder="e-mail">
                     <h5 class="text-light">Address</h5>
-                    <input class="form-control" type="text" th:value="${company.getAddress()}" name="address" placeholder="Address">
+                    <input class="form-control" type="text" th:value="${partner.getAddress()}" name="address" placeholder="Address">
                     <h5 class="text-light">Register Number</h5>
-                    <input class="form-control" type="number" th:value="${company.getRegisterNumber()}" name="registerNumber" placeholder="Register Number">
+                    <input class="form-control" type="number" th:value="${partner.getRegisterNumber()}" name="registerNumber" placeholder="Register Number">
                     <h5 class="text-light">VAT Number</h5>
-                    <input class="form-control" type="number" th:value="${company.getVatNumber()}" name="vatNumber" placeholder="VAT Number">
-                    <div class="row" th:if="${company.isActive()}">
+                    <input class="form-control" type="number" th:value="${partner.getVatNumber()}" name="vatNumber" placeholder="VAT Number">
+                    <div class="row" th:if="${partner.isActive()}">
                         <label class="col-md-6 col-sm-12" for="active">
                             <h3 class="text-center text-success">Active</h3>
                             <input class="form-control" type="radio" id="active" value="true" checked name="active">
@@ -33,7 +33,7 @@
                             <input class="form-control" type="radio" id="active" value="false" name="active">
                         </label>
                     </div>
-                    <div class="row" th:unless="${company.isActive()}">
+                    <div class="row" th:unless="${partner.isActive()}">
                         <label class="col-md-6 col-sm-12" for="active">
                             <h3 class="text-center text-success">Active</h3>
                             <input class="form-control" type="radio" id="active" value="true" name="active">
@@ -43,7 +43,7 @@
                             <input class="form-control" type="radio" id="active" value="false" checked name="active">
                         </label>
                     </div>
-                    <input class="btn btn-lg btn-light" type="submit" value="Edit Company">
+                    <input class="btn btn-lg btn-light" type="submit" value="Edit Partner">
                 </label>
             </form>
     </div>

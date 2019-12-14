@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class Material extends BaseEntity {
 
     @Column(nullable = false, unique = true)
-    private String materialId;
+    private String material;
 
     @Column(nullable = false, unique = true)
     private String description;

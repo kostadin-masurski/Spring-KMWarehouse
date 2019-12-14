@@ -5,14 +5,14 @@
 <th:block th:include="~{_shared/header}"/>
 <main>
     <div class="div-contact">
-            <form class="contacts" id="form-company" method="post" th:action="@{/company/register}">
+            <form class="contacts" id="form-partner" method="post" th:action="@{/partner/register}">
                 <label class="contacts">
-                    <h2 class="text-light">Register Company</h2>
+                    <h2 class="text-light">Register Partner</h2>
                     <th:block th:if="${error}">
                         <div class="alert-danger" th:text="${error}"/>
                     </th:block>
-                    <h5 class="text-light">Company</h5>
-                    <input class="form-control" type="text" name="companyCode" placeholder="Company">
+                    <h5 class="text-light">Partner</h5>
+                    <input class="form-control" type="text" name="partner" placeholder="Partner">
                     <h5 class="text-light">Name</h5>
                     <input class="form-control" type="text" name="name" placeholder="Name">
                     <h5 class="text-light">e-mail</h5>
@@ -23,7 +23,7 @@
                     <input class="form-control" type="number" name="registerNumber" placeholder="Register Number">
                     <h5 class="text-light">VAT Number</h5>
                     <input class="form-control" type="number" name="vatNumber" placeholder="VAT Number">
-                    <input class="btn btn-lg btn-light" type="submit" value="Register Company">
+                    <input class="btn btn-lg btn-light" type="submit" value="Register Partner">
                 </label>
             </form>
     </div>

@@ -8,10 +8,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PartnerModel {
-    private String partnerId;
+    private String partner;
     private String name;
     private String address;
     private String email;
     private Long registerNumber;
     private Long vatNumber;
+    private boolean active;
 }

@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Warehouse extends BaseEntity {
 
     @Column(nullable = false, unique = true)
-    private String whId;
+    private String warehouse;
 
     @Column(nullable = false, unique = true)
     private String name;
