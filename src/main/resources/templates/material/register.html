@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="div-contact">
+        <form class="contacts" id="form-material" method="post" th:action="@{/material/register}">
+            <h2 class="text-light">Register Material</h2>
+            <th:block th:if="${error}">
+                <div class="alert-danger" th:text="${error}"/>
+            </th:block>
+            <h5 class="text-light">Material</h5>
+            <input class="form-control" type="text" name="material" placeholder="Material">
+            <h5 class="text-light">Description</h5>
+            <input class="form-control" type="text" name="description" placeholder="Description">
+            <h5 class="text-light">Price</h5>
+            <input class="form-control" type="number" min="0" step=".01" name="price" placeholder="Price">
+            <h5 class="text-light">Unit</h5>
+            <input class="form-control" type="text" name="unitOfMeasure" placeholder="Unit" list="units">
+            <datalist id="units">
+                <!--<option th:each="unit : ${T(km.kmwarehouse.data.models.UnitOfMeasure).toString()}" th:value="${unit}" th:text="${unit}"></option>-->
+                <option>PC</option>
+                <option>KG</option>
+                <option>M</option>
+                <option>L</option>
+            </datalist>
+            <h5 class="text-light">Vendor</h5>
+            <input class="form-control" id="selected" type="text" name="vendor" placeholder="Vendor">
+            <input class="btn btn-lg btn-light" type="submit" value="Register Material">
+        </form>
+    </div>
+    <div class="div-contact" id="partners"> <!--id goes to api url-->
+        <h5 class="text-light">Select vendor</h5>
+        <input class="form-control" type="text" name="vendorCode" placeholder="Vendor">
+        <input class="form-control" type="text" name="vendorName" placeholder="Vendor name">
+        <table id="dataTable" class="display table-hover table-bordered">
+            <thead class="thead-light bg-light">
+            <tr>
+                <th>Partner</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody class="bg-light">
+            </tbody>
+        </table>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+<script src="/js/inputValidator.js"></script>
+<script src="/js/fetchData.js"></script>
+</html>

@@ -19,6 +19,10 @@ public class ValidationServiceImpl implements ValidationService {
         return !EmailValidator.getInstance().isValid(email);
     }
 
+    private boolean isEmptyPriceOrUnit(String input) {
+        return input.length() < 1;
+    }
+
     private boolean isTooShort(String input) {
         return input.length() < MINIMAL_LENGTH;
     }
@@ -37,8 +41,14 @@ public class ValidationServiceImpl implements ValidationService {
         for (Field field : fieldList) {
             field.setAccessible(true);
             try {
-                if (isTooShort(field.get(serviceModel).toString())) {
-                    isValid = false;
+                if (field.getName().contains("price") || field.getName().contains("unit")){
+                    if (isEmptyPriceOrUnit(field.get(serviceModel).toString())) {
+                        isValid = false;
+                    }
+                }else {
+                    if (isTooShort(field.get(serviceModel).toString())) {
+                        isValid = false;
+                    }
                 }
                 if (containsInvalidSymbol(field.get(serviceModel).toString())) {
                     isValid = false;

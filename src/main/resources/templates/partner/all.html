@@ -5,7 +5,7 @@
 <th:block th:include="~{_shared/header}"/>
 <main>
     <div class="div-bg-table partner-bg">
-        <a href="/partner/register">
+        <a th:unless="false" href="/partner/register">
             <h2 class="text-center text-dark">REGISTER NEW PARTNER</h2>
         </a>
         <h2 class="text-center">ALL PARTNERS</h2>

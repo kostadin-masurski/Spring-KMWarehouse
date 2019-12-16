@@ -9,4 +9,5 @@ public interface PartnerService {
     void edit(PartnerServiceModel model);
     PartnerServiceModel findByPartner(String partner);
     List<PartnerServiceModel> findAll();
+    List<PartnerServiceModel> findAllByPartnerOrName(String partner, String name);
 }

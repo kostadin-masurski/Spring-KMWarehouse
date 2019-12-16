@@ -50,6 +50,11 @@ public class PartnerServiceImpl implements PartnerService {
 
     @Override
     public List<PartnerServiceModel> findAll() {
-        return partnerRepository.findAll().stream().map(c -> mapper.map(c, PartnerServiceModel.class)).collect(Collectors.toList());
+        return partnerRepository.findAll().stream().map(p -> mapper.map(p, PartnerServiceModel.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<PartnerServiceModel> findAllByPartnerOrName(String partner, String name) {
+        return partnerRepository.findAllByPartnerOrNameContaining(partner, name).stream().map(p -> mapper.map(p, PartnerServiceModel.class)).collect(Collectors.toList());
     }
 }

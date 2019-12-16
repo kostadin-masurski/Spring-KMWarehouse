@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="div-bg-table material-bg">
+        <a th:unless="false" href="/material/register">
+            <h2 class="text-center text-dark">REGISTER NEW MATERIAL</h2>
+        </a>
+        <h2 class="text-center">ALL MATERIALS</h2>
+        <table id="myTable" class="display table-hover table-bordered">
+            <thead class="thead-light">
+            <tr>
+                <th>Material</th>
+                <th>Description</th>
+                <th>Vendor</th>
+                <th>Active status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="material: ${materials}">
+                <td th:text="${material.getMaterial()}"/>
+                <td th:text="${material.getDescription()}"/>
+                <td th:text="${material.getVendor()}"/>
+                <td th:if="${material.isActive()}" th:text="Active" class="text-success"/>
+                <td th:unless="${material.isActive()}" th:text="Deactivated" class="text-danger"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+<script src="/js/table.js"></script>
+</html>

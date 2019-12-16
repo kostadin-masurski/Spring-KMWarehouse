@@ -1,0 +1,17 @@
+<th:block th:fragment>
+    <form class="contacts" id="form-material" method="post" th:action="@{/material/__${material.getMaterial()}__}">
+        <h2 class="text-light">Material Details</h2>
+        <h5 class="text-light">Material</h5>
+        <input class="form-control" type="text" disabled th:value="${material.getMaterial()}" name="material" placeholder="Material">
+        <h5 class="text-light">Description</h5>
+        <input class="form-control" type="text" disabled th:value="${material.getDescription()}" name="description" placeholder="Description">
+        <h5 class="text-light">Price</h5>
+        <input class="form-control" type="number" disabled min="0" step=".01" th:value="${material.getPrice()}" name="price" placeholder="Price">
+        <h5 class="text-light">Unit</h5>
+        <input class="form-control" type="text" disabled th:value="${material.getUnitOfMeasure()}" name="unitOfMeasure" placeholder="Unit">
+        <h5 class="text-light">Vendor</h5>
+        <a class="form-control" th:href="@{'/partner/' + ${material.getVendor()}}" th:text="${material.getVendor()}"/>
+        <h3 class="text-center text-success" th:if="${material.isActive()}">Active</h3>
+        <h3 class="text-center text-danger" th:unless="${material.isActive()}">Deactivated</h3>
+    </form>
+</th:block>

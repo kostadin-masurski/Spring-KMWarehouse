@@ -5,27 +5,28 @@
 <th:block th:include="~{_shared/header}"/>
 <main>
     <div class="div-contact">
-            <form class="contacts" id="form-partner" method="post" th:action="@{/partner/register}">
-                <label class="contacts">
-                    <h2 class="text-light">Register Partner</h2>
-                    <th:block th:if="${error}">
-                        <div class="alert-danger" th:text="${error}"/>
-                    </th:block>
-                    <h5 class="text-light">Partner</h5>
-                    <input class="form-control" type="text" name="partner" placeholder="Partner">
-                    <h5 class="text-light">Name</h5>
-                    <input class="form-control" type="text" name="name" placeholder="Name">
-                    <h5 class="text-light">e-mail</h5>
-                    <input class="form-control" type="text" id="email" name="email" placeholder="e-mail">
-                    <h5 class="text-light">Address</h5>
-                    <input class="form-control" type="text" name="address" placeholder="Address">
-                    <h5 class="text-light">Register Number</h5>
-                    <input class="form-control" type="number" name="registerNumber" placeholder="Register Number">
-                    <h5 class="text-light">VAT Number</h5>
-                    <input class="form-control" type="number" name="vatNumber" placeholder="VAT Number">
-                    <input class="btn btn-lg btn-light" type="submit" value="Register Partner">
-                </label>
-            </form>
+        <form class="contacts" id="form-partner" method="post" th:action="@{/partner/register}">
+            <label class="contacts">
+                <h2 class="text-light">Register Partner</h2>
+                <th:block th:if="${error}">
+                    <div class="alert-danger" th:text="${error}"/>
+                </th:block>
+                <h5 class="text-light">Partner</h5>
+                <input class="form-control" type="text" name="partner" placeholder="Partner">
+                <h5 class="text-light">Name</h5>
+                <input class="form-control" type="text" name="name" placeholder="Name">
+                <h5 class="text-light">e-mail</h5>
+                <input class="form-control" type="text" id="email" name="email" placeholder="e-mail">
+                <h5 class="text-light">Address</h5>
+                <input class="form-control" type="text" name="address" placeholder="Address">
+                <h5 class="text-light">Register Number</h5>
+                <input class="form-control" type="number" min="0" step="1" name="registerNumber"
+                       placeholder="Register Number">
+                <h5 class="text-light">VAT Number</h5>
+                <input class="form-control" type="number" min="0" step="1" name="vatNumber" placeholder="VAT Number">
+                <input class="btn btn-lg btn-light" type="submit" value="Register Partner">
+            </label>
+        </form>
     </div>
 </main>
 <th:block th:include="~{_shared/footer}"/>

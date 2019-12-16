@@ -15,7 +15,10 @@ let submitIsAllowed = true;
 function checkInputs(){
     const inputs = $(".contacts input");
     submitIsAllowed = true;
-    checkEmail();
+    if ($("#email").name){
+        console.log($("#email"));
+        checkEmail();
+    }
     inputs.each((index, input) => {validateInput(input)});
     if (submitIsAllowed){
         $(".btn").prop("type", "submit");
@@ -31,16 +34,21 @@ function validateSymbols(input) {
 
 function validateInput(input){
     let inputLengthIsValid = input.value.length >= MINIMAL_LENGTH;
+    if (input.name === 'unitOfMeasure' || input.name === 'price'){
+        inputLengthIsValid = input.value.length >= 1;
+    }
     let symbolsAreValid = !validateSymbols(input.value);
 
     if (inputLengthIsValid){
         input.previousElementSibling.textContent.replace(TEXT_LENGTH_MESSAGE, "");
     }else {
-        let text = input.previousElementSibling.textContent;
-        if (!text.includes(TEXT_LENGTH_MESSAGE)) {
-            text += TEXT_LENGTH_MESSAGE;
+        if (input.name !== 'unitOfMeasure' && input.name !== 'price'){
+            let text = input.previousElementSibling.textContent;
+            if (!text.includes(TEXT_LENGTH_MESSAGE)) {
+                text += TEXT_LENGTH_MESSAGE;
+            }
+            input.previousElementSibling.textContent = text;
         }
-        input.previousElementSibling.textContent = text;
     }
 
     if (symbolsAreValid){

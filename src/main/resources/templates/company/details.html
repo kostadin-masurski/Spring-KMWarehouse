@@ -20,9 +20,9 @@
                     <h5 class="text-light">Address</h5>
                     <input class="form-control" type="text" th:value="${company.getAddress()}" name="address" placeholder="Address">
                     <h5 class="text-light">Register Number</h5>
-                    <input class="form-control" type="number" th:value="${company.getRegisterNumber()}" name="registerNumber" placeholder="Register Number">
+                    <input class="form-control" type="number" min="0" step="1" th:value="${company.getRegisterNumber()}" name="registerNumber" placeholder="Register Number">
                     <h5 class="text-light">VAT Number</h5>
-                    <input class="form-control" type="number" th:value="${company.getVatNumber()}" name="vatNumber" placeholder="VAT Number">
+                    <input class="form-control" type="number" min="0" step="1" th:value="${company.getVatNumber()}" name="vatNumber" placeholder="VAT Number">
                     <div class="row" th:if="${company.isActive()}">
                         <label class="col-md-6 col-sm-12" for="active">
                             <h3 class="text-center text-success">Active</h3>

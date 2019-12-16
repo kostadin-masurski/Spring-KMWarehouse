@@ -1,0 +1,11 @@
+<th:block th:fragment>
+    <form class="contacts" id="form-warehouse" method="post" th:action="@{/warehouse/__${warehouse.getWarehouse()}__}">
+        <h2 class="text-light">Warehouse Details</h2>
+        <h5 class="text-light">Warehouse</h5>
+        <input class="form-control" type="text" disabled th:value="${warehouse.getWarehouse()}" name="warehouse" placeholder="Warehouse">
+        <h5 class="text-light">Name</h5>
+        <input class="form-control" type="text" disabled th:value="${warehouse.getName()}" name="name" placeholder="Name">
+        <h3 class="text-center text-success" th:if="${warehouse.isActive()}">Active</h3>
+        <h3 class="text-center text-danger" th:unless="${warehouse.isActive()}">Deactivated</h3>
+    </form>
+</th:block>

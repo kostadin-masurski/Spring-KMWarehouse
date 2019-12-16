@@ -38,8 +38,8 @@ public class PartnerController {
             return mav;
         } catch (Exception e) {
             mav.setViewName("partner/register");
-            String COMPANY_REG_ERR = "Partner register error. Please fill all fields with the unique partner information.";
-            mav.addObject("error", COMPANY_REG_ERR);
+            String PARTNER_REG_ERR = "Partner register error. Please fill all fields with the unique partner information.";
+            mav.addObject("error", PARTNER_REG_ERR);
             return mav;
         }
     }
@@ -62,8 +62,8 @@ public class PartnerController {
         } catch (Exception e) {
             mav.setViewName("partner/details");
             mav.addObject("partner", partnerService.findByPartner(partner.getPartner()));
-            String COMPANY_EDIT_ERR = "Partner edit error. Please fill all fields with the unique partner information.";
-            mav.addObject("error", COMPANY_EDIT_ERR);
+            String PARTNER_EDIT_ERR = "Partner edit error. Please fill all fields with the unique partner information.";
+            mav.addObject("error", PARTNER_EDIT_ERR);
             return mav;
         }
     }

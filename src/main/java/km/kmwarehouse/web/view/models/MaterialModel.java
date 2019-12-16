@@ -1,6 +1,5 @@
-package km.kmwarehouse.services.models;
+package km.kmwarehouse.web.view.models;
 
-import km.kmwarehouse.data.models.UnitOfMeasure;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,11 +9,11 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @NoArgsConstructor
-public class MaterialServiceModel {
+public class MaterialModel {
     private String material;
     private String description;
     private BigDecimal price;
-    private UnitOfMeasure unitOfMeasure;
+    private String unitOfMeasure;
     private String vendor;
     private boolean active;
 }

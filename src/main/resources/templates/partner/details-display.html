@@ -1,0 +1,19 @@
+<th:block th:fragment>
+    <form class="contacts" id="form-partner" method="post" th:action="@{/partner/__${partner.getPartner()}__}">
+        <h2 class="text-light">Partner Details</h2>
+        <h5 class="text-light">Partner</h5>
+        <input class="form-control" type="text" disabled th:value="${partner.getPartner()}" name="partner" placeholder="Partner">
+        <h5 class="text-light">Name</h5>
+        <input class="form-control" type="text" disabled th:value="${partner.getName()}" name="name" placeholder="Name">
+        <h5 class="text-light">e-mail</h5>
+        <input class="form-control" type="text" disabled id="email" th:value="${partner.getEmail()}" name="email" placeholder="e-mail">
+        <h5 class="text-light">Address</h5>
+        <input class="form-control" type="text" disabled th:value="${partner.getAddress()}" name="address" placeholder="Address">
+        <h5 class="text-light">Register Number</h5>
+        <input class="form-control" type="number" disabled th:value="${partner.getRegisterNumber()}" name="registerNumber" placeholder="Register Number">
+        <h5 class="text-light">VAT Number</h5>
+        <input class="form-control" type="number" disabled th:value="${partner.getVatNumber()}" name="vatNumber" placeholder="VAT Number">
+        <h3 class="text-center text-success" th:if="${partner.isActive()}">Active</h3>
+        <h3 class="text-center text-danger" th:unless="${partner.isActive()}">Deactivated</h3>
+    </form>
+</th:block>

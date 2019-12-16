@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="div-contact">
+        <form class="contacts" id="form-warehouse" method="post" th:action="@{/warehouse/register}">
+            <label class="contacts">
+                <h2 class="text-light">Register Warehouse</h2>
+                <th:block th:if="${error}">
+                    <div class="alert-danger" th:text="${error}"/>
+                </th:block>
+                <h5 class="text-light">Warehouse</h5>
+                <input class="form-control" type="text" name="warehouse" placeholder="Warehouse">
+                <h5 class="text-light">Name</h5>
+                <input class="form-control" type="text" name="name" placeholder="Name">
+                <h5 class="text-light">e-mail</h5>
+                <input class="btn btn-lg btn-light" type="submit" value="Register Warehouse">
+            </label>
+        </form>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+<script src="/js/inputValidator.js"></script>
+</html>
