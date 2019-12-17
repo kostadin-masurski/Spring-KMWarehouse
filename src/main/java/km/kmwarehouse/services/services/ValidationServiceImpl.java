@@ -4,6 +4,7 @@ import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -21,6 +22,10 @@ public class ValidationServiceImpl implements ValidationService {
 
     private boolean isEmptyPriceOrUnit(String input) {
         return input.length() < 1;
+    }
+
+    private boolean isInvalidPrice(String input) {
+        return new BigDecimal(input).compareTo(new BigDecimal("0")) <= 0;
     }
 
     private boolean isTooShort(String input) {
@@ -55,6 +60,11 @@ public class ValidationServiceImpl implements ValidationService {
                 }
                 if (field.getName().contains("email")) {
                     if (invalidEmail(field.get(serviceModel).toString())) {
+                        isValid = false;
+                    }
+                }
+                if (field.getName().contains("price")) {
+                    if (isInvalidPrice(field.get(serviceModel).toString())) {
                         isValid = false;
                     }
                 }

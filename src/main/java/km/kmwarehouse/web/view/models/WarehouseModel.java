@@ -10,5 +10,6 @@ import lombok.Setter;
 public class WarehouseModel {
     private String warehouse;
     private String name;
+    private String address;
     private boolean active;
 }

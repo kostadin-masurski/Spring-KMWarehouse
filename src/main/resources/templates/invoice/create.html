@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="div-contact">
+        <form class="contacts" id="form-invoice" method="post" th:action="@{/invoice/create}">
+            <h2 class="text-light">Create Invoice</h2>
+            <th:block th:if="${error}">
+                <div class="alert-danger" th:text="${error}"/>
+            </th:block>
+            <div class="row">
+                <label class="col-md-6 col-sm-12" for="documentType">
+                    <h3 class="text-center text-success">Inbound</h3>
+                    <input class="form-control" type="radio" id="documentType" value="INBOUND" checked name="documentType">
+                </label>
+                <label class="col-md-6 col-sm-12" for="documentType">
+                    <h3 class="text-center text-danger">Outbound</h3>
+                    <input class="form-control" type="radio" id="documentType" value="OUTBOUND" name="documentType">
+                </label>
+            </div>
+            <h5 class="text-light">Partner</h5>
+            <input class="form-control" type="text" name="partner" placeholder="Partner">
+            <h5 class="text-light">Warehouse</h5>
+            <input class="form-control" type="text" name="warehouse" placeholder="Warehouse">
+            <h5 class="text-light">Material</h5>
+            <input class="form-control" type="text" name="material" placeholder="Material">
+            <h5 class="text-light">Quantity</h5>
+            <input class="form-control" type="number" min="0" name="quantity" placeholder="Quantity">
+            <input class="btn btn-lg btn-light" type="submit" value="Create Invoice">
+        </form>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+<script src="/js/inputValidator.js"></script>
+</html>

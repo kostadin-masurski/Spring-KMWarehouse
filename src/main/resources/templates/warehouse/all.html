@@ -14,6 +14,7 @@
             <tr>
                 <th>Warehouse</th>
                 <th>Name</th>
+                <th>Address</th>
                 <th>Active status</th>
             </tr>
             </thead>
@@ -21,6 +22,7 @@
             <tr th:each="warehouse: ${warehouses}">
                 <td th:text="${warehouse.getWarehouse()}"/>
                 <td th:text="${warehouse.getName()}"/>
+                <td th:text="${warehouse.getAddress()}"/>
                 <td th:if="${warehouse.isActive()}" th:text="Active" class="text-success"/>
                 <td th:unless="${warehouse.isActive()}" th:text="Deactivated" class="text-danger"/>
             </tr>

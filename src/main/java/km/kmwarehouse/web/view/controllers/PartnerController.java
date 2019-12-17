@@ -25,7 +25,7 @@ public class PartnerController {
 
     @GetMapping("/register")
     public String getIndex(){
-        return "partner/register.html";
+        return "partner/create.html";
     }
 
     @PostMapping("/register")

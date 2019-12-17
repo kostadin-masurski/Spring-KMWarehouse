@@ -28,7 +28,7 @@ public class Material extends BaseEntity {
     @Column(columnDefinition = "Decimal(10,2) default '0.00'")
     private BigDecimal price;
 
-    @Column(columnDefinition = "varchar(32) default 'NOT_SET'")
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private UnitOfMeasure unitOfMeasure;
 

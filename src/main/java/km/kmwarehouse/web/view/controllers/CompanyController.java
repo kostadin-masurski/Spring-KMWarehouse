@@ -25,7 +25,7 @@ public class CompanyController {
 
     @GetMapping("/register")
     public String getIndex(){
-        return "company/register.html";
+        return "company/create.html";
     }
 
     @PostMapping("/register")

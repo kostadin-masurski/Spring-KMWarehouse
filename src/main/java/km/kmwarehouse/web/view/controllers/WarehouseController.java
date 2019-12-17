@@ -27,7 +27,7 @@ public class WarehouseController {
 
     @GetMapping("/register")
     public String getIndex(){
-        return "warehouse/register.html";
+        return "warehouse/create.html";
     }
 
     @PostMapping("/register")

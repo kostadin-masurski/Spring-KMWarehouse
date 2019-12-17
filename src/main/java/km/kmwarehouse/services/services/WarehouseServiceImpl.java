@@ -18,7 +18,10 @@ public class WarehouseServiceImpl implements WarehouseService {
     private final ValidationService validator;
     private final Company company;
 
-    public WarehouseServiceImpl(WarehouseRepository warehouseRepository, CompanyRepository companyRepository, ModelMapper mapper, ValidationService validator) {
+    public WarehouseServiceImpl(WarehouseRepository warehouseRepository,
+                                CompanyRepository companyRepository,
+                                ModelMapper mapper,
+                                ValidationService validator) {
         this.warehouseRepository = warehouseRepository;
         this.mapper = mapper;
         this.validator = validator;
