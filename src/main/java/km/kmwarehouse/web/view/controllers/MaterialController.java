@@ -27,7 +27,7 @@ public class MaterialController {
 
     @GetMapping("/register")
     public String getIndex(){
-        return "material/create.html";
+        return "material/register.html";
     }
 
     @PostMapping("/register")

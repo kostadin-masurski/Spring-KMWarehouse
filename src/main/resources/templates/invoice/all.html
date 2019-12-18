@@ -23,14 +23,14 @@
             </thead>
             <tbody>
             <tr th:each="invoice: ${invoices}">
-                <td th:text="${invoice.getCompany().getName()}"/>
+                <td th:text="${#numbers.formatDecimal(invoice.getId(), 9, 0)}"/>
                 <td th:text="${invoice.getPartner().getName()}"/>
                 <td th:text="${invoice.getMaterial().getDescription()}"/>
                 <td th:text="${invoice.getQuantity()}"/>
                 <td th:text="${invoice.getMaterial().getUnitOfMeasure()}"/>
-                <td th:text="${invoice.getMaterial().getPrice().multiply(invoice.getQuantity())}"/>
+                <td th:text="${#numbers.formatDecimal(invoice.getMaterial().getPrice().multiply(invoice.getQuantity()), 1, 2)}"/>
                 <td th:if="${invoice.getDocumentType().equals('INBOUND')}" th:text="Inbound" class="text-success"/>
-                <td th:unless="${invoice.getDocumentType().equals('OUTBOUND')}" th:text="Outbound" class="text-danger"/>
+                <td th:unless="${invoice.getDocumentType().equals('INBOUND')}" th:text="Outbound" class="text-danger"/>
             </tr>
             </tbody>
         </table>

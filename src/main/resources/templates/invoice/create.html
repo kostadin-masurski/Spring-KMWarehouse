@@ -13,14 +13,14 @@
             <div class="row">
                 <label class="col-md-6 col-sm-12" for="documentType">
                     <h3 class="text-center text-success">Inbound</h3>
-                    <input class="form-control" type="radio" id="documentType" value="INBOUND" checked name="documentType">
+                    <input class="form-control" type="radio" id="documentType" value="INBOUND" name="documentType">
                 </label>
                 <label class="col-md-6 col-sm-12" for="documentType">
                     <h3 class="text-center text-danger">Outbound</h3>
-                    <input class="form-control" type="radio" id="documentType" value="OUTBOUND" name="documentType">
+                    <input class="form-control" type="radio" id="documentType" value="OUTBOUND" checked name="documentType">
                 </label>
             </div>
-            <h5 class="text-light">Partner</h5>
+            <h5 class="text-light" id="partnerH3">Partner</h5>
             <input class="form-control" type="text" name="partner" placeholder="Partner">
             <h5 class="text-light">Warehouse</h5>
             <input class="form-control" type="text" name="warehouse" placeholder="Warehouse">
@@ -31,8 +31,63 @@
             <input class="btn btn-lg btn-light" type="submit" value="Create Invoice">
         </form>
     </div>
+    <div class="div-contact" id="selectButtons">
+        <h5 class="text-light">Find and select:</h5>
+        <btn class="btn btn-lg btn-light" id="partnerBtn">Partners</btn>
+        <btn class="btn btn-lg btn-light">Warehouses</btn>
+        <btn class="btn btn-lg btn-light">Materials</btn>
+    </div>
+    <div class="div-contact" id="partners"> <!--id goes to api url-->
+        <h5 class="text-light">Select partner</h5>
+        <input class="form-control" type="text" name="vendorCode" placeholder="Vendor">
+        <input class="form-control" type="text" name="vendorName" placeholder="Vendor name">
+        <table class="display table-hover table-bordered dataTable">
+            <thead class="thead-light bg-light">
+            <tr>
+                <th>Partner</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody class="bg-light">
+            </tbody>
+        </table>
+    </div>
+    <div class="div-contact" id="warehouses"> <!--id goes to api url-->
+        <h5 class="text-light">Select warehouse</h5>
+        <input class="form-control" type="text" name="vendorCode" placeholder="Warehouse">
+        <input class="form-control" type="text" name="vendorName" placeholder="Warehouse name">
+        <table class="display table-hover table-bordered dataTable">
+            <thead class="thead-light bg-light">
+            <tr>
+                <th>Warehouse</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody class="bg-light">
+            </tbody>
+        </table>
+    </div>
+    <div class="div-contact" id="materials"> <!--id goes to api url-->
+        <h5 class="text-light">Select material</h5>
+        <input class="form-control" type="text" name="vendorCode" placeholder="Material">
+        <input class="form-control" type="text" name="vendorName" placeholder="Material name">
+        <table class="display table-hover table-bordered dataTable">
+            <thead class="thead-light bg-light">
+            <tr>
+                <th>Material</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody class="bg-light">
+            </tbody>
+        </table>
+    </div>
 </main>
 <th:block th:include="~{_shared/footer}"/>
 </body>
-<script src="/js/inputValidator.js"></script>
+<script src="/js/invoices.js"></script>
+<script src="/js/fetchData.js"></script>
 </html>
