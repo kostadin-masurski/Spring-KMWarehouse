@@ -1,4 +1,4 @@
-package km.kmwarehouse.services.services;
+package km.kmwarehouse.services.services.implementations;
 
 import km.kmwarehouse.data.models.Company;
 import km.kmwarehouse.data.models.Inventory;
@@ -7,6 +7,7 @@ import km.kmwarehouse.data.repositories.*;
 import km.kmwarehouse.services.models.InventoryServiceModel;
 import km.kmwarehouse.services.models.InvoiceCreateServiceModel;
 import km.kmwarehouse.services.models.InvoiceViewServiceModel;
+import km.kmwarehouse.services.services.InvService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

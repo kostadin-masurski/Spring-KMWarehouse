@@ -26,4 +26,7 @@ public class Warehouse extends BaseEntity {
     @ManyToOne(targetEntity = Company.class)
     @JoinColumn(name = "company_id", referencedColumnName = "id")
     private Company company;
+
+    @Column(columnDefinition = "bit default 1")
+    private boolean active;
 }

@@ -1,5 +1,6 @@
-package km.kmwarehouse.services.services;
+package km.kmwarehouse.services.services.implementations.validation;
 
+import km.kmwarehouse.services.services.ValidationService;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.stereotype.Service;
 

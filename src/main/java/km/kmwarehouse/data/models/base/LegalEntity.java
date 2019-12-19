@@ -16,6 +16,9 @@ import javax.persistence.Table;
 @MappedSuperclass
 public class LegalEntity extends BaseEntity {
 
+    @Column(columnDefinition = "bit default 1")
+    private boolean active;
+
     @Column(nullable = false, unique = true)
     private String name;
 

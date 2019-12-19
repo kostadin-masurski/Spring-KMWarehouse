@@ -1,10 +1,12 @@
-package km.kmwarehouse.services.services;
+package km.kmwarehouse.services.services.implementations;
 
 import km.kmwarehouse.data.models.Company;
 import km.kmwarehouse.data.models.Warehouse;
 import km.kmwarehouse.data.repositories.WarehouseRepository;
 import km.kmwarehouse.data.repositories.CompanyRepository;
 import km.kmwarehouse.services.models.WarehouseServiceModel;
+import km.kmwarehouse.services.services.ValidationService;
+import km.kmwarehouse.services.services.WarehouseService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

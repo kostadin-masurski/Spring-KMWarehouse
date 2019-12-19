@@ -12,11 +12,12 @@
             <div class="collapse navbar-collapse" id="navbarsExample04">
                 <ul class="navbar-nav mr-auto">
                 </ul>
-                <form class="row form-inline my-2 my-md-0" method="post" action="#">
+                <form class="row form-inline my-2 my-md-0" sec:authorize="isAnonymous()" method="post" th:action="@{/login}">
                     <input class="col-4 form-control" type="text" name="username" placeholder="Username">
                     <input class="col-4 form-control" type="password" name="password" placeholder="Password">
-                    <input class="col-2 form-control" type="button" value="Login">
+                    <input class="col-2 form-control" type="submit" value="Login">
                 </form>
+                <a class="col-1 form-control btn" href="/logout" sec:authorize="isAuthenticated()">Log Out</a>
             </div>
         </nav>
     </header>

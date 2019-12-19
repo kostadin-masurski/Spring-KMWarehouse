@@ -14,7 +14,4 @@ public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @Column(columnDefinition = "bit default 1")
-    private boolean active;
 }

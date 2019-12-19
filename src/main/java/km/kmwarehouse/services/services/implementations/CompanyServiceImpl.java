@@ -1,8 +1,10 @@
-package km.kmwarehouse.services.services;
+package km.kmwarehouse.services.services.implementations;
 
 import km.kmwarehouse.data.models.Company;
 import km.kmwarehouse.data.repositories.CompanyRepository;
 import km.kmwarehouse.services.models.CompanyServiceModel;
+import km.kmwarehouse.services.services.CompanyService;
+import km.kmwarehouse.services.services.ValidationService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

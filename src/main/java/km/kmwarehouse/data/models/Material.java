@@ -35,4 +35,7 @@ public class Material extends BaseEntity {
     @ManyToOne(targetEntity = Partner.class)
     @JoinColumn(name = "vendor_id", referencedColumnName = "id")
     private Partner vendor;
+
+    @Column(columnDefinition = "bit default 1")
+    private boolean active;
 }
